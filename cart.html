@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url("https://tse2.mm.bing.net/th?id=OIP.aNgRXnSKQMzViAcZ2pea9QHaHa&pid=Api&P=0&h=180");
+        }
+        .cart-header, .cart-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .cart-header {
+            font-weight: bold;
+            border-bottom: 2px solid #000;
+        }
+        .cart-item img {
+            max-width: 80px;
+            border-radius: 8px;
+        }
+        .cart-total {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #dbd4d4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);}
+
+
+         @media screen and (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+            .cart-header, .cart-item {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                text-align: center;
+            }
+            .cart-header span:nth-child(3), 
+            .cart-header span:nth-child(4), 
+            .cart-header span:nth-child(5), 
+            .cart-item span:nth-child(3), 
+            .cart-item span:nth-child(4), 
+            .cart-item span:nth-child(5) {
+                display: none;
+            }
+            .cart-item img {
+                max-width: 60px;
+                margin: 0 auto;
+            }
+            .cart-total {
+                text-align: center;
+                font-size: 1.2em;
+            }
+            button {
+                width: 100%;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        
+        
+        <div class="cart-header">
+            <span>Image</span>
+            <span>Product Name</span>
+            <span>Price</span>
+            <span>Quantity</span>
+            <span>Total</span>
+        </div>
+
+       
+        <div class="cart-item">
+            <img src="https://www.kreeva.com/blog/wp-content/uploads/2021/12/Anarkali-Dress-Ideas-For-Women.jpg" alt="Product 1">
+            <span>Product 1</span>
+            <span>Rs.1010</span>
+            <span>1</span>
+            <span>Rs.1010</span>
+        </div>
+        <div class="cart-item">
+            <img src="https://i.pinimg.com/originals/2c/41/18/2c4118e096b3338e141e7447832abec3.jpg" alt="Product 2">
+            <span>Product 2</span>
+            <span>Rs.800</span>
+            <span>1</span>
+            <span>Rs.800</span>
+        </div>
+        <div class="cart-item">
+            <img src="http://blog.southindiajewels.com/wp-content/uploads/2019/12/traditional-gold-necklace-designs-1.jpg" alt="Product 3">
+            <span>Product 3</span>
+            <span>Rs.350</span>
+            <span>2</span>
+            <span>Rs.700</span>
+        </div>
+        <p class="cart-total">Total: Rs.2510</p>
+        <button onclick="window.location.href='index.html';">Proceed to Checkout</button>
+    </div>
+</body>
+</html>
