@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5px;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            background-image: url("https://tse2.mm.bing.net/th?id=OIP.aNgRXnSKQMzViAcZ2pea9QHaHa&pid=Api&P=0&h=180");
+            color: beige;
+        }
+        h1{
+            color: antiquewhite;
+        }
+        table {
+            width: 100% auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .total {
+            font-size: 2em;
+            margin-top: 20px;
+            text-align: right;
+        }
+        .empty {
+            text-align: center;
+            font-size: 2em;
+            margin-top: 50px;
+        }
+        .pay{
+            font-size: 1.5em;
+            text-align: right;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div id="cart-content"></div>
+
+    <script>
+        const cartContent = document.getElementById('cart-content');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function displayCart() {
+            if (cart.length === 0) {
+                cartContent.innerHTML = '<p class="empty">Your cart is empty!</p>';
+                return;
+            }
+
+            let tableHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                tableHTML += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.price}</td>
+                        <td>${item.quantity}</td>
+                        <td>${subtotal}</td>
+                        <td>
+                            <button onclick="updateQuantity(${index}, -1)">-</button>
+                            <button onclick="updateQuantity(${index}, 1)">+</button>
+                            <button onclick="removeItem(${index})">Remove</button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            tableHTML += `
+                    </tbody>
+                </table>
+                <p class="total">Total: Rs. ${total}</p>
+                 <button  onclick="window.location.href='payment.html';"class="pay">Proceed to pay</button>
+            `;
+
+            cartContent.innerHTML = tableHTML;
+        }
+
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        displayCart();
+    </script>
+</body>
+</html>

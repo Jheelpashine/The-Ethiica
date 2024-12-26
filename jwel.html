@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jwellery section</title>
+    <style>
+         body{
+            background-image: url("https://tse2.mm.bing.net/th?id=OIP.aNgRXnSKQMzViAcZ2pea9QHaHa&pid=Api&P=0&h=180");
+        }
+        h1{
+            background-image: url("https://wallpapercave.com/wp/wp1890355.jpg");
+            color:aliceblue;
+            font-family: monospace;
+            text-align: center;
+            font-size: 12em;
+           font-weight: bold;
+           z-index:-1;
+           text-shadow:  2px 2px 0px black, 
+                -2px -2px 0px black,  
+                2px -2px 0px black,  
+                -2px 2px 0px black;;
+        }
+        .container{
+            display: grid;
+            gap:60px;
+            text-align: center;
+            grid-template-columns: repeat(3,1fr);
+        }
+        img{
+            height: 300px;
+            width:250px;
+    
+        }
+        .box{
+            background-color: burlywood;
+            padding: 8px;
+            grid-template-rows:auto;
+            text-align: center;
+            font-size: 2em;
+            border-radius: 12%;
+            display: grid; 
+           justify-content: center;
+           justify-items: center;
+        }
+        .box:hover{
+            transform: scale(1.1); 
+            filter: brightness(1.2)
+        }
+        .search-box {
+      display: flex;
+      align-items: center;
+      border: 4px solid #ff2020;
+      border-radius: 30px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 5%;
+      margin-bottom: 3%;
+      margin-left: 30%;
+      margin-right: 50%;
+      font-size: 15px;
+    }
+    figcaption{
+            background-color: black;
+            color: bisque;
+            font-family: fantasy;
+            width: 300px;
+            margin-top: 2%;
+        }
+        .add-to-cart, .buy {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .add-to-cart {
+            background-color: rgb(2, 118, 131);
+            color: white;
+        }
+        .buy {
+            background-color: rgb(121, 72, 7);
+            color: white;}
+         .add-to-cart:hover{
+            transform: scale(1.1); 
+            filter: brightness(1.2);
+        }
+        .buy:hover{
+            transform: scale(1.1); 
+            filter: brightness(1.2);
+        }
+    @media (max-width: 600px) {
+            h1 {
+                font-size: 3em;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+            img {
+                height: 150px;
+                width: 120px;
+            }
+            figcaption {
+                width: 180px;
+            }
+            .search-box {
+                margin: 5% 5%;
+                font-size: 10px;
+            }
+        }
+        #cart-count {
+            font-size: 1.2em;
+            color: darkblue;
+            margin-left: 10px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .modal-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .modal-content button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .close-btn {
+            background-color: red;
+            color: white;
+        }
+        .view-cart-btn {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <center>
+    <h1>Jwellery section</h1>
+    <div class="search-box">
+        <input type="text" placeholder="Search products...">
+        <button type="submit">Search</button>
+      </div>
+    <div class="container">
+        <div class="box"><img src="http://www.tribalmuse.com/images/products/detail/EthnicEarrings.1.JPG">
+        <figcaption>Rs.250</figcaption>
+        <button class="add-to-cart" onclick="addToCart('jwel Product 1', 250)">Add to Cart</button>
+        <button onclick="window.location.href='Jbuy.html';" class="buy">buy now</button></div>
+        <div class="box"><img src="https://n3.sdlcdn.com/imgs/a/h/r/Stunning-Silver-Ethnic-Necklace-Wedding-SDL569315242-1-a61ec.jpg">
+            <figcaption>Rs.300</figcaption>
+            <button class="add-to-cart" onclick="addToCart('jwel Product 2', 300)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+        <div class="box"><img src="https://i.pinimg.com/originals/f4/73/c0/f473c0e6313ce333e43dd79997540096.jpg">
+            <figcaption>Rs.270</figcaption>
+            <button class="add-to-cart" onclick="addToCart('jwel Product 3', 2700)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+        <div class="box"><img src="http://blog.southindiajewels.com/wp-content/uploads/2019/12/traditional-gold-necklace-designs-1.jpg">
+            <figcaption>Rs.350</figcaption>
+            <button class="add-to-cart" onclick="addToCart('jwel Product 4', 350)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+        <div class="box"><img src="http://assets2.mirraw.com/images/1728582/CEEA0006WH_zoom.jpg?1454403562">
+            <figcaption>Rs.290</figcaption>
+            <button class="add-to-cart" onclick="addToCart('jwel Product 5', 290)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+        <div class="box"><img src="https://i.pinimg.com/originals/29/00/44/290044ce867835b2967496ce4f5d8356.jpg">
+            <figcaption>Rs.350</figcaption>
+            <button class="add-to-cart" onclick="addToCart('jwel Product 6', 350)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+    </div>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <p>Item successfully added to cart!</p>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+            <button class="view-cart-btn" onclick="window.location.href='cart.html';">View Cart</button>
+        </div>
+    </div>
+</center>
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function addToCart(name, price) {
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        showModal();
+    }
+
+    function showModal() {
+        const modal = document.getElementById('cart-modal');
+        modal.style.display = 'flex';
+        setTimeout(closeModal, 3000); // Close modal after 3 seconds
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('cart-modal');
+        modal.style.display = 'none';
+    }
+</script>
+</body>
+</html>

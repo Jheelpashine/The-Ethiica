@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>children's section</title>
+    <style>
+        body{
+            background-image: url("https://tse2.mm.bing.net/th?id=OIP.aNgRXnSKQMzViAcZ2pea9QHaHa&pid=Api&P=0&h=180");
+        }
+        h1{
+            background-image: url("https://www.yourdesignerwear.com/media/mageplaza/blog/post/b/e/best-and-adorable-ethnic-wear-for-kids.jpg");
+            color:rgb(183, 206, 226);
+            font-family: monospace;
+            text-align: center;
+            font-size: 10em;
+           font-weight: bold;
+           z-index:-1;
+           text-shadow:  2px 2px 0px black, 
+                -2px -2px 0px black,  
+                2px -2px 0px black,  
+                -2px 2px 0px black;;
+        }
+        .container{
+            display: grid;
+            gap:60px;
+            text-align: center;
+            grid-template-columns: repeat(3,1fr);
+        }
+        img{
+            height: 300px;
+            width:250px;
+           margin: 5px;
+        }
+        .box{
+            background-color:rgb(165, 112, 138);
+            padding: 8px;
+            grid-template-rows: auto;
+            text-align: center;
+            font-size: 2em;
+           border-radius: 12%;  
+           display: grid; 
+           justify-content: center;
+           justify-items: center;
+        }
+        .box:hover{
+            transform: scale(1.1); 
+            filter: brightness(1.2)
+        }
+        .search-box {
+      display: flex;
+      align-items: center;
+      border: 4px solid #be8686;
+      border-radius: 30px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 5%;
+      margin-bottom: 3%;
+      margin-left: 30%;
+      margin-right: 50%;
+      font-size: 15px;
+    }
+    figcaption{
+            background-color: black;
+            color: bisque;
+            font-family: fantasy;
+            width: 300px;
+           
+            margin-top: 2%;
+        }
+        .add-to-cart, .buy {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .add-to-cart {
+            background-color: rgb(4, 53, 4);
+            color: white;
+        }
+        .buy {
+            background-color: rgb(121, 72, 7);
+            color: white;}
+         .add-to-cart:hover{
+            transform: scale(1.1); 
+            filter: brightness(1.2);
+        }
+        .buy:hover{
+            transform: scale(1.1); 
+            filter: brightness(1.2);
+        }
+    @media (max-width: 600px) {
+            h1 {
+                font-size: 3em;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+            img {
+                height: 150px;
+                width: 120px;
+            }
+            figcaption {
+                width: 180px;
+            }
+            .search-box {
+                margin: 5% 5%;
+                font-size: 10px;
+            }
+        }
+        #cart-count {
+            font-size: 1.2em;
+            color: darkblue;
+            margin-left: 10px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .modal-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .modal-content button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .close-btn {
+            background-color: red;
+            color: white;
+        }
+        .view-cart-btn {
+            background-color: green;
+            color: white;
+        }
+   
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Children's Section</h1>
+    <div class="search-box">
+        <input type="text" placeholder="Search products...">
+        <button type="submit">Search</button>
+      </div>
+    <div class="container">
+        <div class="box"><img src="https://dimplefashions.com/wp-content/uploads/2020/09/BI-459-3-scaled.jpg">
+        <figcaption>Rs.800 </figcaption>
+        <button class="add-to-cart" onclick="addToCart('child Product 1', 800)">Add to Cart</button>
+        <button  onclick="window.location.href='chbuy.html';"class="buy">buy now</button></div>
+        <div class="box"><img src="http://4.imimg.com/data4/KV/WQ/MY-27908275/kids-ethnic-wear-500x500.jpg">
+            <figcaption>Rs.770</figcaption>
+            <button class="add-to-cart" onclick="addToCart('child Product 2', 770)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+        <div class="box"><img src="https://5.imimg.com/data5/ECOM/Default/2024/1/374189715/LO/TN/LE/8968532/tks159-1-1000x1000.jpg">
+            <figcaption>Rs.890</figcaption>
+            <button class="add-to-cart" onclick="addToCart('child Product 3', 890)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+        <div class="box"><img src="https://5.imimg.com/data5/ECOM/Default/2024/6/427511607/LJ/XK/DU/8968532/bbb163-1-1000x1000.jpg">
+            <figcaption>Rs.900</figcaption>
+            <button class="add-to-cart" onclick="addToCart('child Product 4', 900)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+        <div class="box"><img src="https://i.pinimg.com/originals/25/ea/93/25ea93212fa964b90112624b493b4eaa.jpg">
+            <figcaption>Rs.750</figcaption>
+            <button class="add-to-cart" onclick="addToCart('child Product 5', 750)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+        <div class="box"><img src="https://dimplefashions.com/wp-content/uploads/2020/09/BI-438-1-scaled.jpg">
+            <figcaption>Rs.910</figcaption>
+            <button class="add-to-cart" onclick="addToCart('child Product 6', 770)">Add to Cart</button>
+            <button class="buy">buy now</button></div>
+    </div>
+   
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <p>Item successfully added to cart!</p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+        <button class="view-cart-btn" onclick="window.location.href='cart.html';">View Cart</button>
+    </div>
+</div>
+   
+</center>
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function addToCart(name, price) {
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        showModal();
+    }
+
+    function showModal() {
+        const modal = document.getElementById('cart-modal');
+        modal.style.display = 'flex';
+        setTimeout(closeModal, 3000); // Close modal after 3 seconds
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('cart-modal');
+        modal.style.display = 'none';
+    }
+</script>
+</body>
+</html>

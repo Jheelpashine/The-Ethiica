@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment section</title>
+    <style>
+        body{
+            background-image: url("https://tse2.mm.bing.net/th?id=OIP.aNgRXnSKQMzViAcZ2pea9QHaHa&pid=Api&P=0&h=180");
+            align-items: center;
+            font-size: 1.5em;
+        }
+        .img{
+            display: inline-block; 
+            background-color: rgb(201, 158, 77); 
+            padding: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+           font-size: 1em;
+        }
+img{
+    display: block; 
+            width: 400px;
+            height: 500px; 
+           
+}
+.container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color:rgb(222, 219, 165);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(226, 75, 75, 0.1);
+    }
+    .dis{
+        text-align: center;
+        color:black ;
+        font-size: 1em;
+    }
+    .payment{
+        max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color:rgb(223, 188, 188);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(226, 75, 75, 0.1);
+     
+    }
+    .button{
+        font-size: 1.5em;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: bisque;
+        background-color: rgb(179, 34, 34);
+    }
+    .button:hover{
+        background-color: rgb(211, 97, 97);
+    }
+    @media screen and (max-width: 600px) {
+            body {
+                font-size: 1em;
+            }
+            .img {
+                padding: 15px;
+            }
+            img {
+                max-width: 100%;
+            }
+            .container, .payment {
+                padding: 15px;
+                margin: 10px;
+            }
+            table {
+                font-size: 0.9em;
+            }
+            .button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center><div class="img">
+        <img src="http://www.tribalmuse.com/images/products/detail/EthnicEarrings.1.JPG">
+        <figcaption>Rs.250</figcaption>
+       <p>Oxidised Earings</p> 
+    </div>
+    <div class="container">
+    <div class="dis">
+        <h2><u>Product Details</u></h2>
+        <table border="2" cellspacing="10" text-align="center">
+            <thead>
+            <tr>
+                <th style="text-align:center">Material</th>
+                <th style="text-align:center">Closure</th>
+                <th style="text-align:center">design</th>
+                <th style="text-align:center">Care Instruction</th>
+            </tr>
+        </thead>
+            <tr>
+                <td style="text-align:center">  High-quality alloy with a durable oxidized silver/black metal finish</td>
+                <td style="text-align:center"> Comfortable and secure hook/lever-back/post-style closure.</td>
+                <td style="text-align:center"> Traditional oxidized finish with intricate patterns, ideal for ethnic and fusion looks.</td>
+                <td style="text-align:center">Store in a dry place and avoid contact with moisture or chemicals to maintain the oxidized effect.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="payment">
+    <h2><u>Payment Details</u></h2>
+
+    <form action="paymsg.html" method="GET" class="payment-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+  
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" placeholder="1111-2222-3333-4444" required><br><br>
+
+            <label for="expiry">Expiry Date:</label>
+            <input type="date" id="expiry" name="expiry" placeholder="MM/YY" required><br><br>
+          
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required><br><br>
+          
+          <button  type="submit" class="button">Pay Rs.250</button>
+      </form><br><br>
+      
+</div>
+</center>
+    
+</body>
+</html>

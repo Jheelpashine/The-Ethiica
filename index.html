@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <style>
+         body{
+            background-image: url("https://tse2.mm.bing.net/th?id=OIP.aNgRXnSKQMzViAcZ2pea9QHaHa&pid=Api&P=0&h=180");
+        }
+        h1{
+            font-size:12em;
+            font-family: 'Courier New', Courier, monospace;
+            background-image: url("https://static.vecteezy.com/system/resources/previews/016/157/619/original/ethnic-pattern-design-of-the-philippines-traditional-pattern-background-it-is-a-pattern-created-by-combining-geometric-shapes-design-for-print-using-in-the-fashion-industry-vector.jpg");
+             color:aliceblue;
+             font-weight: bold;
+           z-index:-1;
+           text-shadow:  4px 4px 0px black, 
+                -4px -4px 0px black,  
+                4px -4px 0px black,  
+                -4px 4px 0px black;
+            }
+            p{
+                color: blanchedalmond;
+                font-size: 30px;
+            }
+            .logo{
+         height:200px;
+        width:200px; 
+       float: left;
+       padding: 15px;
+       top: 15px;
+      bottom:15px;
+      right: 15px;
+     background-image: url("https://tse3.mm.bing.net/th?id=OIP.IAMUZM2hr_RBaZQh58vMJAHaKc&pid=Api&P=0&h=180");
+      margin: 5px;
+      }
+.container{
+            display: grid;
+            gap:30px;
+            text-align: center;
+            grid-template-columns: repeat(2,1fr);
+            align-items: center;
+            margin-left: 15%;
+        }
+        img{
+            height:250px;
+            width:250px;
+        }
+        .box{
+            background: linear-gradient(to right, #ff99cc, #ff66b2);
+            padding: 8px;
+            grid-template-rows:auto;
+            text-align: center;
+            font-size: 2em;
+            color: rgb(61, 1, 61);
+            width: 70%;
+            border-radius: 10%; 
+        }
+        .box:hover{
+            transform: scale(1.1); 
+            filter: brightness(1.2)
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: left;
+          
+            color: rgb(238, 208, 208);
+            padding: 10px 20px;
+            width: 700px;
+            margin-top: 1%;
+           
+            margin-bottom: 3%;
+        }
+        .header nav {
+            display: flex;
+            gap: 60px; border: 4px white;
+        }
+
+        .header nav a {
+            color: rgb(10, 17, 57);
+            text-decoration: none;
+            font-size: 2em;
+        }
+
+        .header nav a:hover {
+            text-decoration: underline;
+            color:  black;
+        }
+        h2{
+            text-decoration:underline;
+            font-family:'Times New Roman', Times, serif;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 4em;
+            }
+            .header {
+                flex-direction: column; 
+                width: 100%;
+                padding: 5px;
+            }
+            .header nav a {
+                font-size: 1.5em;
+            }
+            .container {
+                grid-template-columns: 1fr; 
+                margin-left: 0;
+            }
+            img {
+                height: 150px;
+                width: 150px;
+            }
+            p {
+                font-size: 20px;
+            }
+            .box {
+                font-size: 1.2em;
+                width: 100%;
+            }
+        }
+        .glow{
+            font-size: 4em; /* Large font size for better effect */
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px #0ff, 0 0 17px #0ff, 0 0 27px #0ff, 
+                         0 0 37px #0ff, 0 0 52px #0ff, 0 0 77px #0ff;
+        }
+        .btn{
+            background-color: rgb(72, 3, 88);
+            font-size: 25px;
+            border-radius: 10px;
+            height: 100% auto;
+            width: 100% auto;
+            color: rgb(237, 224, 243);
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;color: blanchedalmond;">
+    <center>
+        <h1>The Ethiica</h1>
+        <header class="header">
+            <nav>
+                <a href="login.html" class="glow">Login</a>
+                <a href="signin.html" class="glow">SignUp</a>
+                <a href="about us.html" class="glow">AboutUs</a>
+                <a href="cart.html" class="glow">Cart</a>
+                
+            </nav>
+        </header>
+        <img class="logo" src="C:\Users\pares\Downloads\logo.webp">
+        <p>Welcome to The Ethiica, your ultimate destination for exquisite ethnic wear that
+             celebrates tradition with a modern twist. We offer a stunning collection of sarees, kurtas,
+              lehengas, and more, crafted with care to bring timeless elegance to your wardrobe. From rich 
+              fabrics and intricate embroidery to contemporary designs, our pieces reflect the beauty of
+               Indian culture while catering to every occasion — be it festive celebrations, weddings, or
+                everyday grace. Discover the perfect blend of heritage and style, tailored just for you. Embrace 
+                tradition, wear it beautifully!</p><br><br>
+
+        <div class="container">
+            <div class="box">
+                <h2>women's section</h2>
+                <img src="https://cdn0.weddingwire.in/article/3768/original/1280/jpg/78673-co-ord-sets-kalista-cropped-sharara-peplum-blouse-set.jpeg">
+                <p><button onclick="window.location.href='womens.html';" class="btn">click here for women's section</button></p>
+            </div>
+            <div class="box">
+                <h2>Jwellery section</h2>
+                <img src="https://tse4.mm.bing.net/th?id=OIP.T11JU4nAR3EWQ4uwQ_tDDwHaE8&pid=Api&P=0&h=180">
+                <p><button onclick="window.location.href='jwel.html';" class="btn">click here for Jwellery section</button></p>
+            </div>
+            <div class="box">
+                <h2>Men's section</h2>
+                <img src="https://i0.wp.com/shaadiwish.com/blog/wp-content/uploads/2021/10/pastel-kurta-pajama.jpg">
+                <p><button onclick="window.location.href='mens.html';" class="btn">click here for men's section</button></p>
+            </div>
+            <div class="box">
+                <h2>Children's section</h2>
+                <img src="https://res.cloudinary.com/purnesh/image/upload/f_auto/v1604555005/21604555004027.jpg">
+                <p><button onclick="window.location.href='children.html';" class="btn">click here for children section</button></p>
+            </div><br><br>
+        </div>
+       
+        <footer style="font-size: 30px;background-color: antiquewhite;color: black;font-family: Arial, Helvetica, sans-serif;">
+           <h3> <b><u>Contact Us:</u></b></h3>
+            <b><i>Phone Number:-</i> </b>9487436538<br>
+             <b><i>E-mail Address:-</i></b>ethiica@gmail.com<br>
+             <b><i>Terms and Conditions:-</i></b><a href="terms.html">T&C page</a>
+        </footer>
+
+    </center>
+    
+</body>
+</html>
